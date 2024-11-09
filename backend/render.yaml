@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mern-app
+    env: node
+    plan: free
+    buildCommand: 'npm install'
+    startCommand: 'npm start'
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        fromDatabase:
+          name: mern-database
+          property: connectionString
+
+databases:
+  - name: mern-database
+    plan: free
+    databaseName: mern
+    user: mern_user
+    password: mern_password
