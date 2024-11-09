@@ -13,9 +13,3 @@ services:
           name: mern-database
           property: connectionString
 
-databases:
-  - name: mern-database
-    plan: free
-    databaseName: mern
-    user: mern_user
-    password: mern_password
